@@ -14,17 +14,20 @@ class MainActivity : AppCompatActivity()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        decideBtn.setOnClickListener{
+        decideBtn.setOnClickListener{ _ ->
             val random = Random()
             val randomFood = random.nextInt(foodList.count())
             selectedFoodTxt.text = foodList[randomFood]
         }
 
-        addFoodBtn.setOnClickListener{
+        addFoodBtn.setOnClickListener{ _ ->
             val newFood = addFoodTxt.text.toString()
-            foodList.add(newFood)
-            addFoodTxt.text.clear()
-            println(foodList)
+            if(newFood.isNotEmpty())
+            {
+                foodList.add(newFood)
+                addFoodTxt.text.clear()
+                println(foodList)
+            }
         }
     }
 }
