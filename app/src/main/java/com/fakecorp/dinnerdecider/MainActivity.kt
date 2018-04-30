@@ -58,10 +58,10 @@ class MainActivity : AppCompatActivity()
             dialog.show()
         })
         val dialog: AlertDialog = builder.create()
-        dialog.setTitle("Test AlertDialog!")
+        dialog.setTitle("Advertisement!")
         val message = TextView(this)
         message.textSize = 21f
-        val s = SpannableString("This is an Alert Dialog! Please visit: google.com")
+        val s = SpannableString("This is an advertisement! Please visit: google.com")
         Linkify.addLinks(s, Linkify.WEB_URLS)
         message.text = s
         message.movementMethod = LinkMovementMethod.getInstance()
